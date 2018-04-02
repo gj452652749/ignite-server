@@ -10,7 +10,6 @@ public class Application {
 	@Bean
 	public Ignite cache() {
 		Ignite ignite = Ignition.start("cache-server.xml");
-		ignite.active();
 		return ignite;
 	}
 	public static void main(String[] args) {

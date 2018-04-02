@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 public class AppDao {
 	@Autowired
 	Ignite ignite;
+	public String get(int key){
+		IgniteCache<Integer, String> cache = ignite.getOrCreateCache("demo");
+		return cache.get(key);
+	}
 	public void put(int key, String value){
 		IgniteCache<Integer, String> cache = ignite.getOrCreateCache("demo");
 		cache.put(key, value);

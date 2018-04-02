@@ -8,6 +8,9 @@ import com.jc.microservice.dao.AppDao;
 public class AppService {
 	@Autowired
 	AppDao appDao;
+	public String get(int key){
+		return appDao.get(key);
+	}
 	public void put(int key, String value){
 		appDao.put(key, value);
 	}

@@ -22,7 +22,12 @@ import com.jc.microservice.service.AppService;
 public class AppController {
     @Autowired
     AppService appService;
-
+    @RequestMapping("/get")
+    @ResponseBody
+    public String put(int key){
+        appService.get(key);
+        return "ok";
+    }
     @RequestMapping("/put")
     @ResponseBody
     public String put(int key, String value){
