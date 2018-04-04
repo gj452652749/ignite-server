@@ -6,13 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 @SpringBootApplication
-public class Application {
+public class ServerApplication {
 	@Bean
 	public Ignite cache() {
 		Ignite ignite = Ignition.start("cache-server.xml");
 		return ignite;
 	}
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ServerApplication.class, args);
 	}
 }
